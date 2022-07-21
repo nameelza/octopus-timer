@@ -18,38 +18,38 @@
             {% if task.complete == false %}
               <li>
                 {{task.name}}
-                <a href="/delete/{{task.id}}" ><img id="checkMark" rel="icon" src="/static/delete.png" alt="Account" /></a>
-                <a href="/update/{{task.id}}"><img id="checkMark" rel="icon" src="/static/check-mark.png" alt="Account" /></a>
+                <a href="/delete/{{task.id}}" ><img class="checkMark" rel="icon" src="/static/delete.png" alt="Account" /></a>
+                <a href="/update/{{task.id}}"><img class="checkMark" rel="icon" src="/static/check-mark.png" alt="Account" /></a>
               </li>
             {% else %}
               <li id="complete" >
                 {{task.name}}
-                <a href="/delete/{{task.id}}" ><img id="checkMark" rel="icon" src="/static/delete.png" alt="Account" /></a>
-                <a href="/update/{{task.id}}"><img id="checkMark" rel="icon" src="/static/check-mark.png" alt="Account" /></a>
+                <a href="/delete/{{task.id}}" ><img class="checkMark" rel="icon" src="/static/delete.png" alt="Account" /></a>
+                <a href="/update/{{task.id}}"><img class="checkMark" rel="icon" src="/static/check-mark.png" alt="Account" /></a>
               </li>
             {% endif %}
           {% endfor %}
 
             {% if user %}
-              <form id="newTaskForm" action="/todolist" method="POST">
-                <input id="submitButton" type="text" maxlength="17" name="todoItem" placeholder="Add a new task" autocomplete="off">
+              <form class="newTaskForm" action="/todolist" method="POST">
+                <input class="submitButton" type="text" maxlength="17" name="todoItem" placeholder="Add a new task" autocomplete="off">
               </form>   
             {% else %}
               <div class="todoListMessage">
                 <li>
                   Submit final papers
-                  <img id="checkMark" rel="icon" src="/static/delete2.png" alt="Account" />
-                  <img id="checkMark" rel="icon" src="/static/check-mark2.png" alt="Account" />
+                  <img class="checkMark" rel="icon" src="/static/delete2.png" alt="Account" />
+                  <img class="checkMark" rel="icon" src="/static/check-mark2.png" alt="Account" />
                 </li>
                 <li>
                   Text Emma back
-                  <img id="checkMark" rel="icon" src="/static/delete2.png" alt="Account" />
-                  <img id="checkMark" rel="icon" src="/static/check-mark2.png" alt="Account" />
+                  <img class="checkMark" rel="icon" src="/static/delete2.png" alt="Account" />
+                  <img class="checkMark" rel="icon" src="/static/check-mark2.png" alt="Account" />
                 </li>
                 <li>
                   Think of project ideas
-                  <img id="checkMark" rel="icon" src="/static/delete2.png" alt="Account" />
-                  <img id="checkMark" rel="icon" src="/static/check-mark2.png" alt="Account" />
+                  <img class="checkMark" rel="icon" src="/static/delete2.png" alt="Account" />
+                  <img class="checkMark" rel="icon" src="/static/check-mark2.png" alt="Account" />
                 </li>
                 <div id="loginMessage"><a href="/register">Create account</a> <br> to start adding your tasks</div>
               </div>

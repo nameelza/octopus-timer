@@ -135,7 +135,7 @@ a:link {
 }
 
 
-#checkMark {
+.checkMark {
     width: 15px;
     height: 15px;
     float: right;
