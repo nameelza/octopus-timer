@@ -1,0 +1,512 @@
+body{
+    margin: 17px 34px;
+}
+
+
+/* layout.html */
+
+.header {
+    align-items: center;
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: 30px;
+}
+
+.todoIcon {
+    width: 50px;
+    height: 16px;
+    visibility: hidden;
+}
+
+.todoIcon img {
+    width: auto;
+    height: 100%;
+}
+
+.todoIcon img:hover{
+    cursor: pointer;
+}
+
+.accountIcon {
+    width: 50px;
+    height: 40px;
+}
+
+.accountIcon img {
+    width: auto;
+    height: 100%;
+    float: right;
+}
+
+a:link {
+    text-decoration: none;
+  }
+
+.logo h1{
+    color: #F6BF4E;
+    font-family: 'Spectral', serif;
+    font-size: 24px;
+    font-weight: extra-bold;
+    float: center;
+}
+
+/* ..TodoLists */
+
+.containerTodo {
+    height: 100%;
+    width: 0;
+    background-color: #F8F6F3;
+    box-shadow: 4px 4px 25px #c7c7c7;
+    position: fixed;
+    transition: 0.5s;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+}
+
+.todoArrow {
+    height: 20px;
+    margin-top: 38px;
+    margin-right: 17px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.todoArrow img {
+    width: auto;
+    height: 100%;
+}
+
+.todoArrow img:hover{
+    cursor: pointer;
+}
+
+
+.todoContent {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: .7px;
+    color: #5D7889
+}
+
+.todoContent ul {
+    list-style: none;
+}
+
+.todoContent li {
+    width: 250px;
+    margin-bottom: 5px;
+}
+
+
+#complete {
+    text-decoration: line-through;
+}
+
+
+.todoContent input[type="text"] {
+    font-size: 18px;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: .7px;
+    color: #5D7889;
+    border: none;
+    background-color: #F8F6F3;
+    margin-left: -2px;
+}
+
+.todoContent input[type="text"]::placeholder {
+    color: #AEACAA;
+}
+
+.todoContent input:focus {
+    outline: none;
+}
+
+.todoContent input:focus::placeholder {
+    color: transparent;
+}
+
+.todoContent input[type="checkbox"]{
+    margin-right: 10px;
+}
+
+
+#checkMark {
+    width: 15px;
+    height: 15px;
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.todoListMessage {
+    font-size: 18px;
+    text-align: left;
+}
+
+.todoListMessage li {
+    color: #b1c1ca;
+}
+
+#loginMessage {
+    width: 230px;
+    font-size: 18px;
+    margin-top: 40px;
+    color: #314FB9;
+    text-align: center;
+    font-weight: 600;
+}
+
+#loginMessage a {
+    color: #314FB9;
+    text-decoration: underline;
+}
+
+
+
+
+/* index.html */
+
+.containerTodo {
+    width: 300px;
+}
+
+.containerTimer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.containerTimer input[type=text] {
+    border: none;
+    color: #373500;
+    font-size: 36px;
+    height: 43px;
+    text-align: center;
+    width: 515px;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: .7px;
+}
+
+.containerTimer input[type=text]::placeholder{
+    color: #ccc9c9;
+    font-size: 36px;
+    letter-spacing: .7px;
+}
+
+.containerTimer input:focus {
+    outline: none;
+}
+
+.containerTimer input:focus::placeholder {
+    color: transparent;
+}
+
+.timer {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.timer input {
+    border: none;
+    color: #373500;
+    font-size: 40px;
+    font-weight: bold;
+    height: 43px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: .7px;
+    background-color: white;
+}
+
+.containerTimer input:disabled {
+    background-color: white;
+}
+
+.timer p {
+    color: #373500;
+    font-size: 36px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.timer input::-webkit-outer-spin-button,
+.timer input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.timer input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#finish {
+    display: none;
+}
+
+#break {
+    display: none;
+}
+
+#continue{
+    display: none;
+}
+
+.timerButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#break, #continue {
+    margin-right: 15px;
+}
+
+
+/* timer shape */
+
+.wrapper{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.bigcircle {
+    width: 200px;
+    height: 200px;
+    background: #F3F5FD;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smallcircle {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #F6BF4E;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 0 0 9px 1px #00000025;
+
+}
+
+svg {
+    z-index: 1;
+}
+
+circle {
+    fill: none;
+    stroke: #314FB9;
+    stroke-width: 6.5px;
+    stroke-dasharray: 0, 293;
+    stroke-linecap: round;
+    transform: rotate(270deg);
+    transform-origin: center;
+    transition: 1s linear all;
+
+}
+
+
+/* Register & Login */
+
+.form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.form p{
+    color: #5D7889;
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    letter-spacing: .7px;
+    font-weight: light;
+    margin-bottom: 30px;
+}
+
+.form-control {
+    height: 30px;
+    width: 260px;
+    margin-bottom: 10px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc9c9;
+}
+
+.form-control:focus {
+    border: 1px solid #555;
+    outline: none;
+}
+
+.form-control:focus::placeholder {
+    color: transparent;
+  }
+
+.form-control::placeholder {
+    color: #ccc9c9;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    letter-spacing: .7px;
+    font-weight: light;
+}
+
+.btnPrimary {
+    height: 40px;
+    width: 140px;
+    margin: 10px 0;
+    background-color: #314FB9;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    letter-spacing: .7px;
+    font-weight: light;
+}
+
+.btnPrimary:hover {
+    background-color: #213da0;
+    cursor: pointer;
+}
+
+.form a {
+    color: #373500;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    letter-spacing: .7px;
+    font-weight: light;
+}
+
+.alert {
+    width: 255px;
+    margin: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    letter-spacing: .7px;
+    font-weight: light;
+    color: #004085;
+    padding: 10px;
+    background-color: #cce5ff;
+    border-radius: 4px;
+    border: 1px solid #b1dbe5;;
+}
+
+
+/* Account.html */
+
+.accountContent  {
+    margin: 40px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.accountHeader h1 {
+    color: #F6BF4E;
+    font-family: 'Spectral', serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: -10px;
+}
+
+.accountHeader p {
+    color: #373500;
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    padding-left: 4px;
+    margin-bottom: 0;
+    font-weight: 300;
+}
+
+.historyContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.totalTimer {
+    color: #314FB9;
+    font-family: 'Spectral', serif;
+    font-size: 36px;
+    font-weight: 800;
+    margin: 20px 0 15px 0;
+}
+
+.historyHeading {
+    color: #373500;
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table td {
+    color: #373500;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    padding: 15px 40px;
+}
+
+
+table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#noSessionsMessage {
+    color: #ccc9c9;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#logout {
+    background-color: transparent;
+    color: #314FB9;
+}
+
+#logoutForm {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+
+
+
+
+
+

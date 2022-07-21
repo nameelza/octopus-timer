@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block body %}
+
+    <div class="accountContent">
+        <div class="accountHeader">
+            <p>Hi, {{username}}!</p>
+            <h1>Keep up the good work</h1>
+        </div>
+
+        <div class="historyHeading">Your history</div>
+
+        <div class="historyTable">
+            <table id = "history">
+                <tbody>
+                    <div id="noSessionsMessage">{{message}}</div>
+                    {% for session in sessions%}
+                    <tr>
+                        <td>{{session.date.day}}/{{session.date.month}}/{{session.date.year}}</td>
+                        <td>{{session.duration}}</td>
+                        <td>{{session.name}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <form id="backForm" action="/">
+            <button id="back" class="btnPrimary">Back</button>
+        </form>
+        <form id="logoutForm" action="/logout">
+            <button id="logout" class="btnPrimary">Log out</button>
+        </form>
+            
+            
+        </div>
+    </div>
+
+{% endblock %}

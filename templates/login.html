@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block body %}
+    <div class="form">
+        <p>Welcome back!</p>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <input autocomplete="off" class="form-control" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" class="form-control" name="password" placeholder="Password" type="password">
+            </div>
+            <button class="btnPrimary" type="submit">Log In</button>
+        </form>
+        <a href="/register">Register</a>
+        {% if message %}
+        <div class="alert">{{message}}</div>
+        {% endif %}
+    </div>
+{% endblock %}
